@@ -1,1 +1,3 @@
-console.log("prout");
+export function activate() {
+  console.log("prout :)");
+}
