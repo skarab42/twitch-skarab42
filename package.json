@@ -11,7 +11,7 @@
     "Other"
   ],
   "activationEvents": [
-    "*"
+    "onCommand:twitch-skarab42.twitch-login"
   ],
   "contributes": {
     "commands": [
@@ -26,6 +26,7 @@
     "watch": "tsc -w"
   },
   "devDependencies": {
+    "@types/vscode": "^1.59.0",
     "tslib": "^2.3.1",
     "typescript": "^4.3.5"
   }
