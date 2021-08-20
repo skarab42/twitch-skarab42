@@ -11,15 +11,38 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:twitch-skarab42.twitch-login"
+    "*"
   ],
   "contributes": {
     "commands": [
       {
-        "title": "Twitch Plugin: Login",
+        "title": "Twitch skarab42: Login",
         "command": "twitch-skarab42.twitch-login"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Twitch skarab42",
+      "properties": {
+        "twitch.clientId": {
+          "type": "string",
+          "default": "7m7uvz4xk1lu7iywf59m65d7nd1rpg",
+          "markdownDescription": "Client id generated from your [Twitch Dev Console](https://dev.twitch.tv/console/apps)."
+        },
+        "twitch.redirectUri": {
+          "type": "string",
+          "format": "uri",
+          "default": "http://localhost:5842/auth",
+          "markdownDescription": "Will receive the result of all client authorizations: either an access token or a failure message."
+        },
+        "twitch.scopes": {
+          "type": "string",
+          "default": "user:read:email, chat:edit, chat:read",
+          "pattern": "^(?:(?:[a-z]+_?[a-z]+:[a-z]+_?[a-z]+)(?::[a-z]+_?[a-z]+)?(?:(?: |,|, )|$))+$",
+          "patternErrorMessage": " Please provide a comma or space separated list of scopes: e.g. user:read:email, chat:edit, chat:read",
+          "markdownDescription": "Access token [scopes](https://dev.twitch.tv/docs/authentication#scopes) separated by space or comma."
+        }
+      }
+    }
   },
   "scripts": {
     "build": "tsc",
@@ -28,6 +51,8 @@
   "devDependencies": {
     "@types/vscode": "^1.59.0",
     "tslib": "^2.3.1",
+    "twitch": "^4.6.5",
+    "twitch-auth": "^4.6.5",
     "typescript": "^4.3.5"
   }
 }
