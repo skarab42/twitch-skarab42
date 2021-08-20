@@ -1,0 +1,25 @@
+{
+  "name": "twitch-skarab42",
+  "displayName": "Twitch skarab42",
+  "version": "1.0.0",
+  "main": "./dist/extension.js",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.59.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "title": "Twitch Plugin: Login",
+        "command": "twitch-skarab42.twitch-login"
+      }
+    ]
+  },
+  "scripts": {}
+}
